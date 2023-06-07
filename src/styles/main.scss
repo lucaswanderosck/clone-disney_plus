@@ -1,3 +1,29 @@
+@use "variables";
+@use "hero";
+
+@mixin text($fontSize: 16px) {
+  font-size: $fontSize;
+  line-height: $fontSize + 10px;
+  color: variables.$mainColor;
+}
+
+@mixin title($fontSize: 40px) {
+  @include text($fontSize);
+  color: variables.$secondaryColor;
+}
+
+@font-face {
+  font-family: Avenir;
+  src: url(../../assets/fonts/Avenir-Regular.woff2);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Avenir;
+  src: url(../../assets/fonts/Avenir-Bold.woff2);
+  font-weight: 700;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,4 +32,34 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  background-color: variables.$bgColor;
+  font-family: Avenir, sans-serif;
+}
+
+.title {
+  @include title;
+}
+.title--small {
+  @include title(28px);
+}
+.title--bib {
+  @include title(44px);
+}
+
+.text {
+  @include text;
+}
+.text--small {
+  @include text(12px);
+}
+.text--big {
+  @include text(18px);
+}
+.link-text {
+  @include text(16px);
+  color: variables.$secondaryColor;
+  text-decoration: underline;
 }
