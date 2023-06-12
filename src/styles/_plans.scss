@@ -13,7 +13,9 @@
     margin-top: 50px;
 
     @media (max-width: 768px) {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       margin-top: 0;
     }
 
@@ -50,7 +52,7 @@
       }
     }
   }
-  
+
   p {
     text-align: center;
   }
