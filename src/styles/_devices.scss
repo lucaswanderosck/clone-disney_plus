@@ -1,0 +1,41 @@
+@use "variables";
+
+.devices {
+  padding: 5.6vw;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  &__list {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(4, 1fr);
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &__item {
+      text-align: center;
+
+      h4 {
+        margin: 20px 0 24px;
+      }
+
+      li {
+        list-style: none;
+        cursor: default;
+
+        &:hover {
+          color: variables.$secondaryColor;
+        }
+      }
+
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+@use "variables";
+
+.faq {
+  padding: 5.6vw;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 24px;
+
+    @media (max-width: 768px) {
+      margin-top: 56px;
+    }
+  }
+
+  &__questions {
+    &__item {
+      background-color: variables.$bgFaq;
+      margin-bottom: 16px;
+
+      &__question {
+        color: #fff;
+        font-size: 20px;
+        padding: 24px;
+        display: block;
+        cursor: pointer;
+        user-select: none;
+        position: relative;
+
+        @media (max-width: 768px) {
+          font-size: 15px;
+          line-height: 25px;
+          padding-right: 28px;
+        }
+
+        &::after {
+          content: "\002B";
+          position: absolute;
+          top: 0;
+          right: 24px;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          font-size: 40px;
+          color: white;
+        }
+      }
+
+      &__answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+
+        p {
+          padding: 0 24px 24px;
+        }
+
+        ul {
+          list-style-type: disc;
+          padding: 0 40px 24px 64px;
+
+          li {
+            padding: 8px 0;
+          }
+        }
+      }
+
+      &--active::after {
+        content: "\2212";
+      }
+    }
+  }
+}
